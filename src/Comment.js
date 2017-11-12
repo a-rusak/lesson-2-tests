@@ -13,7 +13,7 @@ class Comment extends Component {
           className="delete"
           role="img"
           aria-label="Delete"
-          onClick={() => this.handleDelete()}
+          onClick={this.handleDelete}
         >
           ❌
         </span>
