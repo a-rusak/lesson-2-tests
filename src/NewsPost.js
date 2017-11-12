@@ -29,11 +29,10 @@ class NewsPost extends Component {
     }
   };
 
-  handleDelete = evt => {
-    this.setState({
-      comments: [],
-      commentInput: ""
-    });
+  handleDelete = commentId => {
+    const comments = [...this.state.comments];
+    comments.splice(commentId - 1, 1);
+    this.setState({comments});
   };
 
   render() {

@@ -3,21 +3,21 @@ import "./Comment.css";
 
 class Comment extends Component {
   handleDelete = evt => {
-    
+    this.props.onDelete(this.props.id);
   };
   render() {
-    const { text, onDelete } = this.props;
+    const { text } = this.props;
     return (
       <article>
-        <p>{text}</p>
         <span
           className="delete"
           role="img"
           aria-label="Delete"
-          onClick={() => onDelete(this.props.id)}
+          onClick={() => this.handleDelete()}
         >
           ❌
         </span>
+        <p>{text}</p>
       </article>
     );
   }
